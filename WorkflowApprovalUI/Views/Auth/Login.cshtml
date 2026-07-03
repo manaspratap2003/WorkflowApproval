@@ -1,0 +1,10 @@
+@model WorkflowApprovalUI.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Sign In";
+    Layout = "_Layout";
+    ViewBag.AuthMode = "login";
+    ViewBag.LoginModel = Model;
+    ViewBag.RegisterModel = new WorkflowApprovalUI.Models.RegisterViewModel();
+}
+
+@await Html.PartialAsync("_AuthExperience")

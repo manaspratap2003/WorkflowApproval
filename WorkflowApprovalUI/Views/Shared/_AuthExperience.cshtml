@@ -1,0 +1,187 @@
+@using WorkflowApprovalUI.Models
+@{
+    var mode = ViewBag.AuthMode as string ?? "login";
+    var login = ViewBag.LoginModel as LoginViewModel ?? new LoginViewModel();
+    var register = ViewBag.RegisterModel as RegisterViewModel ?? new RegisterViewModel();
+    var selectedRole = string.IsNullOrEmpty(register.Role) ? "Designer" : register.Role;
+}
+
+<div class="auth-page" data-auth-mode="@mode">
+    <div class="auth-left">
+        <div class="auth-left-glow"></div>
+
+        <!-- Animated background orbs -->
+        <div class="auth-orb auth-orb-1"></div>
+        <div class="auth-orb auth-orb-2"></div>
+        <div class="auth-orb auth-orb-3"></div>
+
+        <!-- CSS 3D floating UI mockup (decorative) -->
+        <div class="auth-3d-scene">
+            <div class="mock-card mock-card-back"></div>
+            <div class="mock-card mock-card-mid">
+                <div class="mock-bar mock-bar-title"></div>
+                <div class="mock-bar mock-bar-sm"></div>
+                <div class="mock-chips">
+                    <span class="mock-chip mock-chip-green"></span>
+                    <span class="mock-chip mock-chip-blue"></span>
+                    <span class="mock-chip mock-chip-orange"></span>
+                </div>
+                <div class="mock-progress">
+                    <div class="mock-progress-fill"></div>
+                </div>
+            </div>
+            <div class="mock-card mock-card-front">
+                <div class="mock-icon-row">
+                    <div class="mock-avatar"></div>
+                    <div>
+                        <div class="mock-bar mock-bar-name"></div>
+                        <div class="mock-bar mock-bar-role"></div>
+                    </div>
+                </div>
+                <div class="mock-stat-row">
+                    <div class="mock-stat"><div class="mock-stat-val"></div><div class="mock-stat-label"></div></div>
+                    <div class="mock-stat"><div class="mock-stat-val"></div><div class="mock-stat-label"></div></div>
+                    <div class="mock-stat"><div class="mock-stat-val"></div><div class="mock-stat-label"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="auth-left-panel auth-left-panel-login @(mode == "login" ? "active" : "")">
+            <div class="auth-brand auth-animate auth-animate-1">
+                <i class="fa-solid fa-diagram-project"></i>
+                <span>FlowDesk</span>
+            </div>
+            <h1 class="auth-headline auth-animate auth-animate-2">Streamline your<br /><span>approval workflow.</span></h1>
+            <p class="auth-sub auth-animate auth-animate-3">Manage projects, tasks, files, and team approvals in one unified workspace.</p>
+            <div class="auth-features auth-animate auth-animate-4">
+                <div class="auth-feature"><i class="fa-solid fa-check-circle"></i> Role-based access control</div>
+                <div class="auth-feature"><i class="fa-solid fa-check-circle"></i> Real-time file versioning</div>
+                <div class="auth-feature"><i class="fa-solid fa-check-circle"></i> Full audit trail</div>
+            </div>
+        </div>
+
+        <div class="auth-left-panel auth-left-panel-register @(mode == "register" ? "active" : "")">
+            <div class="auth-brand auth-animate auth-animate-1">
+                <i class="fa-solid fa-diagram-project"></i>
+                <span>FlowDesk</span>
+            </div>
+            <h1 class="auth-headline auth-animate auth-animate-2">Join your team's<br /><span>workflow hub.</span></h1>
+            <p class="auth-sub auth-animate auth-animate-3">Create your account to start collaborating on projects and approvals.</p>
+            <div class="auth-features auth-animate auth-animate-4">
+                <div class="auth-feature"><i class="fa-solid fa-check-circle"></i> 5 role types available</div>
+                <div class="auth-feature"><i class="fa-solid fa-check-circle"></i> Instant project access</div>
+                <div class="auth-feature"><i class="fa-solid fa-check-circle"></i> Secure JWT sessions</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="auth-right">
+        <div class="auth-forms-stage" id="auth-forms-stage">
+            <!-- Login panel -->
+            <div class="auth-panel auth-panel-login @(mode == "login" ? "active" : "")" id="auth-panel-login">
+                <div class="auth-card">
+                    <h2 class="auth-card-title">Welcome back</h2>
+                    <p class="auth-card-sub">Sign in to your workspace</p>
+
+                    @if (mode == "login" && ViewBag.Error != null)
+                    {
+                        <div class="form-error-banner"><i class="fa-solid fa-triangle-exclamation"></i> @ViewBag.Error</div>
+                    }
+                    @if (mode == "login" && TempData["Success"] != null)
+                    {
+                        <div class="form-success-banner"><i class="fa-solid fa-circle-check"></i> @TempData["Success"]</div>
+                    }
+
+                    <form method="post" asp-action="Login" asp-controller="Auth">
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input name="Email" type="email" value="@login.Email" placeholder="you@company.com" class="form-input" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-solid fa-lock"></i>
+                                <input name="Password" type="password" placeholder="••••••••" class="form-input" required />
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full">
+                            Sign In <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <p class="auth-switch">
+                        Don't have an account?
+                        <button type="button" class="auth-switch-link" onclick="switchAuthMode('register')">Create one</button>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Register panel -->
+            <div class="auth-panel auth-panel-register @(mode == "register" ? "active" : "")" id="auth-panel-register">
+                <div class="auth-card">
+                    <h2 class="auth-card-title">Create account</h2>
+                    <p class="auth-card-sub">Get started in seconds</p>
+
+                    @if (mode == "register" && ViewBag.Error != null)
+                    {
+                        <div class="form-error-banner"><i class="fa-solid fa-triangle-exclamation"></i> @ViewBag.Error</div>
+                    }
+
+                    <form method="post" asp-action="Register" asp-controller="Auth">
+                        <div class="form-group">
+                            <label>Full name</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-solid fa-user"></i>
+                                <input name="FullName" type="text" value="@register.FullName" placeholder="Jane Smith" class="form-input" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input name="Email" type="email" value="@register.Email" placeholder="you@company.com" class="form-input" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-solid fa-lock"></i>
+                                <input name="Password" type="password" placeholder="Min. 6 characters" class="form-input" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Role</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-solid fa-id-badge"></i>
+                                <select name="Role" class="form-input form-select">
+                                    @foreach (var roleOption in new[] { "Admin", "Manager", "Designer", "Reviewer", "Client" })
+                                    {
+                                        if (selectedRole == roleOption)
+                                        {
+                                            <option value="@roleOption" selected="selected">@roleOption</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@roleOption">@roleOption</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full">
+                            Create Account <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <p class="auth-switch">
+                        Already have an account?
+                        <button type="button" class="auth-switch-link" onclick="switchAuthMode('login')">Sign in</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

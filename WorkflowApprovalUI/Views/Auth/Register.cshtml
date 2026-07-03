@@ -1,0 +1,10 @@
+@model WorkflowApprovalUI.Models.RegisterViewModel
+@{
+    ViewData["Title"] = "Create Account";
+    Layout = "_Layout";
+    ViewBag.AuthMode = "register";
+    ViewBag.RegisterModel = Model;
+    ViewBag.LoginModel = new WorkflowApprovalUI.Models.LoginViewModel();
+}
+
+@await Html.PartialAsync("_AuthExperience")

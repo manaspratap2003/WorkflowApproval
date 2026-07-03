@@ -1,0 +1,49 @@
+{
+  "version": 2,
+  "dgSpecHash": "mwH46rDpls4=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Manas Pratap Singh\\Desktop\\Manas Drive\\Project\\WorkflowApprovalUI\\WorkflowApprovalUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\microsoft.applicationinsights\\2.23.0\\microsoft.applicationinsights.2.23.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\microsoft.applicationinsights.aspnetcore\\2.23.0\\microsoft.applicationinsights.aspnetcore.2.23.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\microsoft.applicationinsights.dependencycollector\\2.23.0\\microsoft.applicationinsights.dependencycollector.2.23.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\microsoft.applicationinsights.eventcountercollector\\2.23.0\\microsoft.applicationinsights.eventcountercollector.2.23.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\microsoft.applicationinsights.perfcountercollector\\2.23.0\\microsoft.applicationinsights.perfcountercollector.2.23.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\microsoft.applicationinsights.windowsserver\\2.23.0\\microsoft.applicationinsights.windowsserver.2.23.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\microsoft.applicationinsights.windowsserver.telemetrychannel\\2.23.0\\microsoft.applicationinsights.windowsserver.telemetrychannel.2.23.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\microsoft.extensions.dependencymodel\\8.0.2\\microsoft.extensions.dependencymodel.8.0.2.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\microsoft.extensions.logging.applicationinsights\\2.23.0\\microsoft.extensions.logging.applicationinsights.2.23.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\serilog\\3.1.1\\serilog.3.1.1.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\serilog.aspnetcore\\8.0.3\\serilog.aspnetcore.8.0.3.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\serilog.extensions.hosting\\8.0.0\\serilog.extensions.hosting.8.0.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\serilog.extensions.logging\\8.0.0\\serilog.extensions.logging.8.0.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\serilog.formatting.compact\\2.0.0\\serilog.formatting.compact.2.0.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\serilog.settings.configuration\\8.0.4\\serilog.settings.configuration.8.0.4.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\serilog.sinks.applicationinsights\\4.0.0\\serilog.sinks.applicationinsights.4.0.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\serilog.sinks.console\\5.0.0\\serilog.sinks.console.5.0.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\serilog.sinks.debug\\2.0.0\\serilog.sinks.debug.2.0.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\system.diagnostics.performancecounter\\6.0.0\\system.diagnostics.performancecounter.6.0.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\system.io.filesystem.accesscontrol\\4.7.0\\system.io.filesystem.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\system.security.cryptography.protecteddata\\6.0.0\\system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Manas Pratap Singh\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "WorkflowApprovalUI depends on Microsoft.ApplicationInsights.AspNetCore (>= 2.22.4) but Microsoft.ApplicationInsights.AspNetCore 2.22.4 was not found. Microsoft.ApplicationInsights.AspNetCore 2.23.0 was resolved instead.",
+      "projectPath": "C:\\Users\\Manas Pratap Singh\\Desktop\\Manas Drive\\Project\\WorkflowApprovalUI\\WorkflowApprovalUI.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Manas Pratap Singh\\Desktop\\Manas Drive\\Project\\WorkflowApprovalUI\\WorkflowApprovalUI.csproj",
+      "libraryId": "Microsoft.ApplicationInsights.AspNetCore",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}
